@@ -1,15 +1,13 @@
-
 import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
   const techStack = [
-    { name: "React/Next.js", category: "Frontend" },
-    { name: "Node.js", category: "Backend" },
-    { name: "Python/Django", category: "Backend" },
-    { name: "PostgreSQL", category: "Database" },
-    { name: "AWS/Azure", category: "Cloud" },
-    { name: "Docker", category: "DevOps" },
+    { name: "Java", category: "Language" },
+    { name: "JavaScript", category: "Language" },
     { name: "TypeScript", category: "Language" },
+    { name: "Spring Boot", category: "Backend" },
+    { name: "React", category: "Frontend" },
+    { name: "MySQL", category: "Database" },
     { name: "MongoDB", category: "Database" }
   ];
 
