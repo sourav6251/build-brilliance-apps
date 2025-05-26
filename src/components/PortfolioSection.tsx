@@ -3,11 +3,11 @@ import { Button } from '@/components/ui/button';
 const PortfolioSection = () => {
   const featuredProject = {
     title: "College Department Management System",
-    client: "Regional University",
+    client: "Panskura Banamali College",
     description: "A comprehensive administrative system that streamlined operations for a college department with 2,000+ students and 50+ faculty members.",
     challenge: "The department was struggling with manual paperwork, inefficient student record management, and time-consuming administrative processes.",
     solution: "Built a full-stack web application with automated workflows, RFID-enabled attendance tracking, and integrated faculty portals.",
-    technologies: ["React.js", "Node.js", "PostgreSQL", "AWS", "Redis", "RFID Integration"],
+    technologies: ["React.js", "Node.js", "Mongodb"],
     results: [{
       metric: "60%",
       description: "Reduction in administrative workload"

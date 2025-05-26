@@ -157,11 +157,12 @@ const ContactSection = () => {
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
                     <Mail className="h-5 w-5 text-developer-teal-light" />
-                    <span className="text-gray-300">developer@example.com</span>
+                    <a href='mailto:dassourav3738@gmail.com' className="text-gray-300">dassourav3738@gmail.com</a>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Github className="h-5 w-5 text-developer-teal-light" />
-                    <span className="text-gray-300">github.com/developer</span>
+                    {/* https://github.com/sourav6251 */}
+                    <a className="text-gray-300 hover:text-blue-500" href='https://github.com/sourav6251'>github.com/sourav6251</a>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Linkedin className="h-5 w-5 text-developer-teal-light" />
