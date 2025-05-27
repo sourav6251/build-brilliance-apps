@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -6,6 +5,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Github, Linkedin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -16,25 +16,48 @@ const ContactSection = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you within 24 hours.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      projectDetails: '',
-      budget: ''
-    });
+
+    // EmailJS configuration
+    const serviceID = 'service_hrmd8eb'; // Replace with your EmailJS Service ID
+    const templateID = 'template_ca9agv5'; // Replace with your EmailJS Template ID
+    const publicKey = 'JG-eiLTzSVwqYtjY5'; // Replace with your EmailJS Public Key
+
+    // Prepare form data for EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      project_details: formData.projectDetails,
+      budget: formData.budget,
+    };
+
+    // Send email using EmailJS
+    emailjs.send(serviceID, templateID, templateParams, publicKey)
+      .then(() => {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out. I'll get back to you within 24 hours.",
+        });
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          projectDetails: '',
+          budget: ''
+        });
+      })
+      .catch((error) => {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again later.",
+          variant: "destructive",
+        });
+        console.error('EmailJS error:', error);
+      });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -161,7 +184,6 @@ const ContactSection = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <Github className="h-5 w-5 text-developer-teal-light" />
-                    {/* https://github.com/sourav6251 */}
                     <a className="text-gray-300 hover:text-blue-500" href='https://github.com/sourav6251'>github.com/sourav6251</a>
                   </div>
                   <div className="flex items-center space-x-3">
