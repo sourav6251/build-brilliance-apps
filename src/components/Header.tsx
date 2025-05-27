@@ -19,7 +19,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="font-bold text-xl text-developer-navy">
-           <img src="justlogo.svg" alt="logo" />
+           <img src="logo.svg" alt="logo"  className='h-10'/>
            {/* <img src="../../public/logo.svg" alt="logo" /> */}
 
           </div>
