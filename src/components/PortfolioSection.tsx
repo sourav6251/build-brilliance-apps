@@ -105,19 +105,19 @@ const PortfolioSection = () => {
             Other Notable Projects
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {otherProjects.map((project, index) => <Card key={index} className="hover:shadow-lg transition-shadow duration-300 bg-slate-600">
+            {otherProjects.map((project, index) => <Card key={index} className="border-0 hover:shadow-lg transition-shadow duration-300 bg-slate-600 hover:bg-slate-700">
                 <CardHeader>
                   <CardTitle className="text-developer-navy">{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="mb-4">
+                  <div className="mb-4 ">
                     <div className="flex flex-wrap gap-1 mb-3">
                       {project.tech.map((tech, idx) => <span key={idx} className="bg-developer-teal/10 text-developer-teal px-2 py-1 rounded text-xs">
                           {tech}
                         </span>)}
                     </div>
-                    <p className="text-sm text-green-600 font-semibold">
+                    <p className="text-sm text-[#81b6e7] font-semibold">
                       📈 {project.result}
                     </p>
                   </div>
@@ -127,7 +127,7 @@ const PortfolioSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-developer-teal hover:bg-developer-teal/90" onClick={() => {
+          <Button size="lg" className="text-white bg-developer-teal hover:bg-developer-teal/90" onClick={() => {
           const element = document.getElementById('contact');
           if (element) element.scrollIntoView({
             behavior: 'smooth'
@@ -135,6 +135,7 @@ const PortfolioSection = () => {
         }}>
             Start Your Project Today
           </Button>
+          {/* <Button>Hello</Button> */}
         </div>
       </div>
     </section>;

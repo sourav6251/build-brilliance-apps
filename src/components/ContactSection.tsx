@@ -99,7 +99,7 @@ const ContactSection = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="bg-white/20 border-white/30 text-white placeholder:text-gray-400"
+                    className="bg-white/20 focus:ring-offset-0 border-white/30 text-white placeholder:text-gray-400"
                     placeholder="John Doe"
                   />
                 </div>
@@ -121,7 +121,7 @@ const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
+                  {/* <label htmlFor="budget" className="block text-sm font-medium text-gray-300 mb-2">
                     Project Budget Range
                   </label>
                   <select
@@ -137,7 +137,7 @@ const ContactSection = () => {
                     <option value="10k-25k" className="text-gray-900">$10,000 - $25,000</option>
                     <option value="25k-50k" className="text-gray-900">$25,000 - $50,000</option>
                     <option value="50k+" className="text-gray-900">$50,000+</option>
-                  </select>
+                  </select> */}
                 </div>
 
                 <div>
